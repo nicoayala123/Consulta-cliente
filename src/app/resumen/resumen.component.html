@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Resumen Cliente</h2>
+  <div class="card">
+    <div class="card-body">
+      <div class="form-group mb-3">
+        <label for="tipoDocumento">Tipo de Documento</label>
+        <input type="text" class="form-control" [value]="cliente?.tipoDocumento" disabled>
+      </div>
+      <div class="form-group mb-3">
+        <label for="numeroDocumento">Número de Documento</label>
+        <input type="text" class="form-control" [value]="cliente?.numeroDocumento" disabled>
+      </div>
+      <div class="form-group mb-3">
+        <label for="primerNombre">Primer Nombre</label>
+        <input type="text" class="form-control" [value]="cliente?.primerNombre" disabled>
+      </div>
+      <div class="form-group mb-3">
+        <label for="primerApellido">Primer Apellido</label>
+        <input type="text" class="form-control" [value]="cliente?.primerApellido" disabled>
+      </div>
+      <button class="btn btn-secondary" (click)="volver()">Volver</button>
+    </div>
+  </div>
+</div>

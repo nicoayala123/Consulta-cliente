@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Consulta Cliente</h2>
+  <div class="card">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group mb-3">
+          <label for="tipoDocumento">Tipo de Documento</label>
+          <select class="form-select" id="tipoDocumento" [(ngModel)]="tipoDocumento" name="tipoDocumento" required>
+            <option value="" disabled selected>Seleccione un tipo de documento</option>
+            <option value="Cédula de Ciudadanía ">Cédula de Ciudadanía</option>
+            <option value="Pasaporte">Pasaporte</option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <label for="numeroDocumento">Número de Documento</label>
+          <input type="text" class="form-control" id="numeroDocumento" [(ngModel)]="numeroDocumento" name="numeroDocumento" required (input)="formatNumber()" pattern="^\d{8,11}$" [ngModelOptions]="{ updateOn: 'blur' }">
+        </div>
+        <div class="form-group mb-3">
+          <label for="primerNombre">Primer Nombre</label>
+          <input type="text" class="form-control" id="primerNombre" [(ngModel)]="primerNombre" name="primerNombre" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="primerApellido">Primer Apellido</label>
+          <input type="text" class="form-control" id="primerApellido" [(ngModel)]="primerApellido" name="primerApellido" required>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3" style="padding: 10px 67px;" [disabled]="!isValid()">Buscar</button>
+      </form>
+    </div>   
+  </div> 
+</div>
